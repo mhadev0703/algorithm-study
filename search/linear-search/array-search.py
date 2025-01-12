@@ -24,3 +24,10 @@ print(caller(square, 10))
 # -> 100
 print(caller(minus_one, 10))
 # -> 9
+
+# Converting all of elements into an integer
+arr = ['1', '3', '7', '10', '33']
+res = list(map(int, arr))   # Integer conversion built-in function 
+print(res)
+# -> [1, 3, 7, 10, 33]
+
