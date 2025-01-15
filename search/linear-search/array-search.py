@@ -56,3 +56,12 @@ print("Ascending order:", unique_numbers)
 unique_numbers = sorted(set_numbers, reverse = True)
 print("Descending order:", unique_numbers)
 # -> [9, 8, 5, 3, 1]
+
+# Takes name and score, then zip it & convert it into list, sort in descending order
+
+l1 = ['Amy', 'Cam', 'Bob']  
+l2 = [81, 62, 79]
+
+zipped = list(zip(l1, l2))
+print(zipped)
+print(sorted(zipped))
