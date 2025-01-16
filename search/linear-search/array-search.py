@@ -64,4 +64,17 @@ l2 = [81, 62, 79]
 
 zipped = list(zip(l1, l2))
 print(zipped)
+# -> [('Amy', 81), ('Cam', 62), ('Bob', 79)]
 print(sorted(zipped))
+# -> [('Amy', 81), ('Bob', 79), ('Cam', 62)]
+
+# To sort tuple by the second element, 
+# takes tuple as input then define function returning the second element
+def sort_by_second(tup):
+    return tup[1]
+
+# As the parameter of sorted(), put key = function name
+print(sorted(zipped, key = sort_by_second))
+# -> [('Cam', 62), ('Bob', 79), ('Amy', 81)]
+print(sorted(zipped, key = sort_by_second, reverse = True))  # Descending order
+# -> [('Amy', 81), ('Bob', 79), ('Cam', 62)]
