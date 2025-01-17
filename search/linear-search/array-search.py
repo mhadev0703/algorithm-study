@@ -78,3 +78,18 @@ print(sorted(zipped, key = sort_by_second))
 # -> [('Cam', 62), ('Bob', 79), ('Amy', 81)]
 print(sorted(zipped, key = sort_by_second, reverse = True))  # Descending order
 # -> [('Amy', 81), ('Bob', 79), ('Cam', 62)]
+
+# Using lambda function as parameter of map() function
+# Takes list as input, then return list after squaring each element
+input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+result = list(map(lambda x : x*x, input_list))
+print(result)
+# -> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Takes name and score list, sort by descending order
+arr = [('Amy', 81), ('Cam', 62), ('Bob', 79)]
+
+# Using lambda function as parameter of sorted()
+print(sorted(arr, key = lambda x : x[1], reverse = True))
+# -> [('Amy', 81), ('Bob', 79), ('Cam', 62)]
