@@ -93,3 +93,17 @@ arr = [('Amy', 81), ('Cam', 62), ('Bob', 79)]
 # Using lambda function as parameter of sorted()
 print(sorted(arr, key = lambda x : x[1], reverse = True))
 # -> [('Amy', 81), ('Bob', 79), ('Cam', 62)]
+
+
+# Example 1: Student info in 2D list
+students = [
+    ["John", 85],
+    ["Jane", 92],
+    ["Dave", 88],
+    ["Sara", 95]
+]
+
+# Sort students by score in descending order
+sorted_students = sorted(students, key=lambda x: x[1], reverse=True)
+print(sorted_students)
+# -> [['Sara', 95], ['Jane', 92], ['Dave', 88], ['John', 85]]
