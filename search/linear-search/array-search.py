@@ -107,3 +107,11 @@ students = [
 sorted_students = sorted(students, key=lambda x: x[1], reverse=True)
 print(sorted_students)
 # -> [['Sara', 95], ['Jane', 92], ['Dave', 88], ['John', 85]]
+
+# Example 2
+import sys
+
+inp = int(input())
+for i in range(inp):
+    a, b = map(int, sys.stdin.readline().split())
+    print(a + b)
