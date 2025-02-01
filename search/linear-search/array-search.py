@@ -115,3 +115,30 @@ inp = int(input())
 for i in range(inp):
     a, b = map(int, sys.stdin.readline().split())
     print(a + b)
+
+# Example 3
+N = int(input())
+pairs = [ list(map(int, input().split())) for _ in range(N) ]
+
+output = [0] * N
+
+for i in range(N):
+    output[i] = sum(pairs[i])
+
+print(*output, sep="\n")
+"""
+Input
+5
+1 1 
+12 34
+5 500
+40 60
+1000 1000
+
+Output
+2
+46
+505
+100
+2000
+"""
