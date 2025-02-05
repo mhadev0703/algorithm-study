@@ -142,3 +142,35 @@ Output
 100
 2000
 """
+
+# Example 4
+"""
+Program that reads 10 numbers, calculates their remainder when divided by 42, 
+and counts the number of unique remainders.
+"""
+
+# Read 10 input numbers and compute their remainder when divided by 42
+remainders = set()
+
+for _ in range(10):
+    num = int(input())  # Read each number
+    remainders.add(num % 42)  # Store the remainder in a set
+
+# Output the count of unique remainders
+print(len(remainders))
+"""
+Input
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Output
+10
+"""
