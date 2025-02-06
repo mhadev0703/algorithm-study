@@ -147,18 +147,7 @@ Output
 """
 Program that reads 10 numbers, calculates their remainder when divided by 42, 
 and counts the number of unique remainders.
-"""
 
-# Read 10 input numbers and compute their remainder when divided by 42
-remainders = set()
-
-for _ in range(10):
-    num = int(input())  # Read each number
-    remainders.add(num % 42)  # Store the remainder in a set
-
-# Output the count of unique remainders
-print(len(remainders))
-"""
 Input
 1
 2
@@ -174,3 +163,20 @@ Input
 Output
 10
 """
+
+# Solution 1
+# Read 10 input numbers and compute their remainder when divided by 42
+remainders = set()
+
+for _ in range(10):
+    num = int(input())  # Read each number
+    remainders.add(num % 42)  # Store the remainder in a set
+
+# Output the count of unique remainders
+print(len(remainders))
+
+# Solution 2
+arr = [42, 84, 252, 420, 840, 126, 42, 84, 420, 126]
+arr_42 = list(map(lambda ele: ele % 42, arr))
+arr_42_unique = list(set(arr_42))
+print(arr_42)
