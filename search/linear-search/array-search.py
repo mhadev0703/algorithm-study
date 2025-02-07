@@ -180,3 +180,58 @@ arr = [42, 84, 252, 420, 840, 126, 42, 84, 420, 126]
 arr_42 = list(map(lambda ele: ele % 42, arr))
 arr_42_unique = list(set(arr_42))
 print(arr_42)
+
+# Example 5
+"""
+A group word is defined as a word where each letter appears consecutively without interruption.
+
+For example:
+"cazzzzzbb" is a group word because c, a, z, and b all appear in consecutive sequences.
+"kinck" is not a group word because k appears twice but is interrupted by other characters.
+"aabbccb" is not a group word because b appears twice but is split by c.
+Given a list of words, determine how many of them are group words.
+
+Input Format
+The first line contains an integer N, the number of words (1 ≤ N ≤ 100).
+The next N lines each contain a word consisting of lowercase English letters only.
+The length of each word is at most 100.
+
+Output Format
+Print a single integer representing the number of group words.
+
+Sample Input & Output
+
+Input
+3 
+happy 
+new 
+year
+
+Output
+3
+"""
+
+N = int(input())  # Number of words
+words = [input().strip() for _ in range(N)]  # List of input words
+group_word_count = 0  # Counter for valid group words
+
+for word in words:
+    prev_char = word[0]  # Track the previous character
+    seen_chars = []  # List to store previously seen characters
+    is_group_word = True  # Flag to check if the word is a group word
+
+    for char in word:
+        if char != prev_char:
+            seen_chars.append(prev_char)  # Add previous character to the seen list
+
+        # If the character appeared before but is not consecutive, it's not a group word
+        if char in seen_chars:
+            is_group_word = False
+            break  # No need to check further if it's already invalid
+
+        prev_char = char  # Update previous character
+
+    if is_group_word:
+        group_word_count += 1  # Increment count if it's a valid group word
+
+print(group_word_count)  # Output the total count of group words
