@@ -6,12 +6,31 @@ def countdown(n) :
     if n == 1:
         return "1 end!"
     
-    recur_out = countdown(n - 1)
-    cur_out = str(n)
+    next_count = countdown(n - 1)  # Recursive call for the next number  
+    current_number = str(n)  # Convert current number to string
 
-    comb_out = cur_out + ', ' + recur_out
-
-    return comb_out
-
+    result = current_number + ', ' + next_count  # Combine current and recursive output
+    return result
+    
 countdown(5)
 # -> '5, 4, 3, 2, 1 end!'
+
+# Example 2
+# Decimal to binary
+
+def decimal_to_binary(k):
+    # End condition
+    if k == 1:
+        return str(1)
+    
+    # Recursion condition
+    quotient = k // 2
+    smaller_output = decimal_to_binary(quotient)
+    
+    current_output = str(k % 2)
+
+    return smaller_output + current_output
+
+example_decimal = 11
+result = decimal_to_binary(example_decimal)
+print(result)
