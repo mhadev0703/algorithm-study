@@ -34,3 +34,20 @@ def decimal_to_binary(k):
 example_decimal = 11
 result = decimal_to_binary(example_decimal)
 print(result)
+
+# Example 3
+# Checking palindrome
+
+def is_palindrome(s):
+    if len(s) <= 1: 
+        return True
+    
+    if s[0] != s[-1]:
+        res = False
+    else:
+        res = is_palindrome(s[1:-1])
+    
+    return res
+
+res = is_palindrome("a")
+print(res)
