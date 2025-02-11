@@ -16,20 +16,18 @@ countdown(5)
 # -> '5, 4, 3, 2, 1 end!'
 
 # Example 2
-# Decimal to binary
+# Decimal to binary (Recursion) 
 
 def decimal_to_binary(k):
     # End condition
     if k == 1:
         return str(1)
     
-    # Recursion condition
-    quotient = k // 2
-    smaller_output = decimal_to_binary(quotient)
-    
-    current_output = str(k % 2)
+    # Recursive step: Divide n by 2 and convert the quotient first
+    next_value = decimal_to_binary(k // 2)  # Convert the quotient to binary
+    remainder = str(k % 2)  # Get the remainder as the current binary digit
 
-    return smaller_output + current_output
+    return next_value + remainder
 
 example_decimal = 11
 result = decimal_to_binary(example_decimal)
@@ -39,15 +37,16 @@ print(result)
 # Checking palindrome
 
 def is_palindrome(s):
+    # Base case
     if len(s) <= 1: 
         return True
     
+    # If first and last characters do not match, it's not a palindrome
     if s[0] != s[-1]:
-        res = False
-    else:
-        res = is_palindrome(s[1:-1])
-    
-    return res
+        return False
 
-res = is_palindrome("a")
-print(res)
+    # Recursively check the substring without the first and last characters
+    return is_palindrome(s[1:-1])
+
+test_string = is_palindrome("a")
+print(test_string)
