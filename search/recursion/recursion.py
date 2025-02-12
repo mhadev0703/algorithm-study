@@ -50,3 +50,22 @@ def is_palindrome(s):
 
 test_string = is_palindrome("a")
 print(test_string)
+
+
+# Example 4
+def flatten(nested_list):
+    """
+    Recursively flattens a nested list.
+    """
+    # Base case: If the element is not a list, return it as a single-element list
+    if not isinstance(nested_list, list):
+        return [nested_list]
+
+    flattened_result = []  # Stores the final flattened list
+    for element in nested_list:
+        flattened_result += flatten(element)  # Recursively flatten each item
+
+    return flattened_result
+
+print(flatten([1, [2, 3, 4], [5, 6, [7, 8]]]))
+# -> Expected output: [1, 2, 3, 4, 5, 6, 7, 8]
