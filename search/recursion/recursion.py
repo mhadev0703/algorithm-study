@@ -69,3 +69,19 @@ def flatten(nested_list):
 
 print(flatten([1, [2, 3, 4], [5, 6, [7, 8]]]))
 # -> Expected output: [1, 2, 3, 4, 5, 6, 7, 8]
+
+# Example 5 
+# Recursive Fibonacci function
+
+def fibonacci(n):
+    # Base cases: Fibonacci(0) = 0, Fibonacci(1) = 1
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+
+    # Recursive step: Sum of the previous two Fibonacci numbers
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Example usage
+print(fibonacci(10))  # Expected output: 55
